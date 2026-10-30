@@ -11,3 +11,4 @@ nav{margin-bottom:32px;font-weight:600}
 nav a{margin-right:16px;text-decoration:none}
 footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600}
+.soon{color:var(--muted);font-weight:600}
