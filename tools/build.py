@@ -81,7 +81,7 @@ def head(title, desc, path, *, og_type="website", ld=None, noindex=False):
         f'<meta name="twitter:description" content="{esc(desc)}">',
         f'<meta name="twitter:image" content="{OG}">',
         f'<meta name="twitter:image:alt" content="{esc(OG_ALT)}">',
-        '<link rel="stylesheet" href="/assets/site.css?v=3">',
+        '<link rel="stylesheet" href="/assets/site.css?v=4">',
     ]
     if ld:
         parts.append(jsonld(ld))
@@ -291,8 +291,8 @@ def home():
 <div class="feed">
 <h3>Before</h3>
 <div class="post"><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
-<div class="post bad"><span class="tag ad">Promoted</span><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
-<div class="post bad"><span class="tag sg">Suggested</span><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
+<div class="post bad"><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
+<div class="post bad"><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
 <div class="post"><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
 </div>
 <div class="feed clean">
