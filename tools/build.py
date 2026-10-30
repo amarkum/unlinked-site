@@ -12,7 +12,7 @@ SITE = "https://unlinked.store"
 STORE_URL = None  # set to the Chrome Web Store listing URL once it is published
 LASTMOD = "2026-10-30"
 EMAIL = "amarkumar.sde@gmail.com"
-SPONSORS = "https://github.com/sponsors/amarkum"
+COFFEE = "https://buymeacoffee.com/amarxkumar"
 OG = f"{SITE}/assets/og-image.jpg"
 OG_ALT = "Unlinked Chrome extension popup next to the headline: A clean LinkedIn feed"
 DISCLAIMER = "Unlinked is an independent project and is not affiliated with or endorsed by LinkedIn. LinkedIn is a trademark of LinkedIn Corporation."
@@ -139,6 +139,7 @@ def footer():
 <ul>
 <li><a href="/support/">Support</a></li>
 <li><a href="/privacy/">Privacy policy</a></li>
+<li><a href="{COFFEE}" rel="noopener">Buy me a coffee</a></li>
 <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
 </ul>
 </div>
@@ -194,7 +195,7 @@ FAQ = [
     ("Which browsers does it work in?",
      "Unlinked is built for Chrome on desktop. Other Chromium-based browsers such as Edge and Brave can usually install Chrome Web Store extensions, but Chrome is the supported browser."),
     ("Is Unlinked free?",
-     "Yes, it is free to use. If you find it useful you can support the project through GitHub Sponsors."),
+     "Yes, it is free to use. If you find it useful, you can support the project by buying me a coffee."),
     ("Is Unlinked affiliated with LinkedIn?",
      "No. Unlinked is an independent project and is not affiliated with or endorsed by LinkedIn."),
 ]
@@ -204,7 +205,7 @@ def faq_html():
     out = []
     for q, a in FAQ:
         if q == "Is Unlinked free?":
-            a_html = f'Yes, it is free to use. If you find it useful you can support the project through <a href="{SPONSORS}" rel="noopener">GitHub Sponsors</a>.'
+            a_html = f'Yes, it is free to use. If you find it useful, you can support the project by <a href="{COFFEE}" rel="noopener">buying me a coffee</a>.'
         elif q == "How do I clean up my LinkedIn feed?":
             a_html = esc(a) + ' Read the <a href="/clean-linkedin-feed/">full guide to cleaning up your LinkedIn feed</a>.'
         elif q == "Does Unlinked collect my data?":
@@ -492,6 +493,7 @@ def privacy():
 <li><b>Permissions.</b> Unlinked asks for the <code>storage</code> permission and access to www.linkedin.com. It needs nothing else.</li>
 <li><b>Remote code.</b> None. All of the extension&rsquo;s code is bundled in the package.</li>
 <li><b>Third parties.</b> Unlinked sends no data to any third party.</li>
+<li><b>Donate button.</b> The popup has a Donate button that opens a Buy Me a Coffee page in a new tab. It is an ordinary link: Unlinked sends nothing when you click it, and what you do on that page is covered by Buy Me a Coffee&rsquo;s own privacy policy.</li>
 </ul>
 
 <h2>What is stored</h2>
@@ -632,6 +634,7 @@ def store():
 <div class="callout">
 <b>Private by design.</b> No accounts, no analytics, no servers. Read the <a href="/privacy/">privacy policy</a>, get help on the <a href="/support/">support page</a>, or see the <a href="/clean-linkedin-feed/">guide to cleaning up your LinkedIn feed</a>.
 </div>
+<p>Unlinked is free. If it saves you time, you can <a href="{COFFEE}" rel="noopener">buy me a coffee</a>.</p>
 </div>
 </main>
 {footer()}'''
