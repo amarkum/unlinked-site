@@ -23,13 +23,13 @@
 <meta property="og:image" content="https://unlinked.store/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Unlinked Chrome extension popup next to the headline: A clean LinkedIn feed">
+<meta property="og:image:alt" content="The Unlinked popup next to the headline: See only the people you follow on LinkedIn.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Unlinked: Clean LinkedIn Feed – Hide Ads &amp; Suggested Posts">
 <meta name="twitter:description" content="Unlinked is a free Chrome extension that cleans your LinkedIn feed: hide ads, suggested and “liked by” posts and see only the people you follow.">
 <meta name="twitter:image" content="https://unlinked.store/assets/og-image.jpg">
-<meta name="twitter:image:alt" content="Unlinked Chrome extension popup next to the headline: A clean LinkedIn feed">
-<link rel="stylesheet" href="/assets/site.css?v=4">
+<meta name="twitter:image:alt" content="The Unlinked popup next to the headline: See only the people you follow on LinkedIn.">
+<link rel="stylesheet" href="/assets/site.css?v=6">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://unlinked.store/#website","url":"https://unlinked.store/","name":"Unlinked","inLanguage":"en","description":"A free Chrome extension that cleans up your LinkedIn feed."},{"@type":"SoftwareApplication","@id":"https://unlinked.store/#app","name":"Unlinked - Clean LinkedIn Feed","url":"https://unlinked.store/","applicationCategory":"BrowserApplication","operatingSystem":"Chrome","description":"Clean up your LinkedIn feed: see posts from people you follow, without promoted, suggested and other noise.","image":"https://unlinked.store/assets/og-image.jpg","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"installUrl":"https://chromewebstore.google.com/detail/unlinked-clean-linkedin-f/mgeelmoeppnfccegklclehplkkicmcca","downloadUrl":"https://chromewebstore.google.com/detail/unlinked-clean-linkedin-f/mgeelmoeppnfccegklclehplkkicmcca","sameAs":["https://chromewebstore.google.com/detail/unlinked-clean-linkedin-f/mgeelmoeppnfccegklclehplkkicmcca"]},{"@type":"FAQPage","@id":"https://unlinked.store/#faq","mainEntity":[{"@type":"Question","name":"What is Unlinked?","acceptedAnswer":{"@type":"Answer","text":"Unlinked is a free Chrome extension that cleans up your LinkedIn home feed. It hides promoted posts, suggested posts, “liked by” and “commented on” activity and other filler, so the feed shows posts from the people and pages you follow."}},{"@type":"Question","name":"How do I clean up my LinkedIn feed?","acceptedAnswer":{"@type":"Answer","text":"Install Unlinked, open linkedin.com and pick a filter from the toolbar popup. Recommended keeps posts from people you follow, Ads & suggestions is lighter, and Aggressive hides everything else. Under Advanced you can switch individual items on or off."}},{"@type":"Question","name":"Can I hide LinkedIn ads and promoted posts?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Ads & suggestions filter hides promoted posts and LinkedIn’s suggestions, and you can switch ads and suggestions off separately under Advanced."}},{"@type":"Question","name":"Can I still see the posts Unlinked hides?","acceptedAnswer":{"@type":"Answer","text":"Yes. Turn Unlinked off at any time with the switch at the top of the popup. Or, under Advanced, turn on “Show a line where posts were hidden” to get a thin “N posts hidden” line you can click to bring them back."}},{"@type":"Question","name":"Does Unlinked collect my data?","acceptedAnswer":{"@type":"Answer","text":"No. Unlinked runs only on linkedin.com, works entirely in your browser and sends no data anywhere. Your settings are saved with Chrome sync, and recently seen author names used for muted-people suggestions stay on your device."}},{"@type":"Question","name":"Which browsers does it work in?","acceptedAnswer":{"@type":"Answer","text":"Unlinked is built for Chrome on desktop. Other Chromium-based browsers such as Edge and Brave can usually install Chrome Web Store extensions, but Chrome is the supported browser."}},{"@type":"Question","name":"Is Unlinked free?","acceptedAnswer":{"@type":"Answer","text":"Yes, it is free to use. If you find it useful, you can support the project by buying me a coffee or through GitHub Sponsors."}},{"@type":"Question","name":"Is Unlinked affiliated with LinkedIn?","acceptedAnswer":{"@type":"Answer","text":"No. Unlinked is an independent project and is not affiliated with or endorsed by LinkedIn."}}]}]}</script>
 </head>
 <body>
@@ -38,108 +38,70 @@
 <div class="wrap">
 <a class="brand" href="/"><img src="/assets/icon-48.png" width="32" height="32" alt="">Unlinked</a>
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><svg class="i-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg><svg class="i-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-<nav class="nav" id="site-nav" aria-label="Main"><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/clean-linkedin-feed/">Guide</a><a href="/#faq">FAQ</a><a href="/support/">Support</a><a href="/store/" class="nav-cta">Install</a></nav>
+<nav class="nav" id="site-nav" aria-label="Main"><a href="/#hides">What it hides</a><a href="/clean-linkedin-feed/">Guide</a><a href="/#faq">FAQ</a><a href="/support/">Support</a><a href="/store/" class="nav-cta">Install</a></nav>
 </div>
 </header>
 <script>(function(){var h=document.querySelector('.site-header'),b=h.querySelector('.menu-btn');h.classList.add('js');function set(o){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o)}b.addEventListener('click',function(){set(!h.classList.contains('open'))});h.querySelector('.nav').addEventListener('click',function(e){if(e.target.closest('a'))set(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open')){set(false);b.focus()}})})();</script>
 <main id="main">
 
 <section class="hero">
-<div class="wrap">
+<div class="wrap hero-grid">
 <div class="hero-copy">
-<p class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Free Chrome extension for LinkedIn</p>
-<h1>A clean LinkedIn feed. <em>Only the people you follow.</em></h1>
-<p class="lede">Unlinked is a LinkedIn feed cleaner. It hides ads, suggested posts, &ldquo;liked by&rdquo; activity and other filler, so you see posts from the people and pages you actually follow.</p>
-<div class="cta"><a class="btn btn-primary" href="https://chromewebstore.google.com/detail/unlinked-clean-linkedin-f/mgeelmoeppnfccegklclehplkkicmcca" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Add to Chrome, it&rsquo;s free</a><a class="btn btn-ghost" href="/store/">Details &amp; screenshots</a></div>
-<ul class="trust">
-<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> No data collected</li>
-<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Runs only on linkedin.com</li>
-<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Free to use</li>
-</ul>
+<h1>See only the people you follow on LinkedIn.</h1>
+<p class="lede">Unlinked is a free Chrome extension. It clears ads, suggested posts and &ldquo;so-and-so liked this&rdquo; posts out of your LinkedIn feed before you see them.</p>
+<div class="cta"><a class="store-badge" href="https://chromewebstore.google.com/detail/unlinked-clean-linkedin-f/mgeelmoeppnfccegklclehplkkicmcca" rel="noopener"><img src="/assets/chrome-web-store.png" width="206" height="62" alt="Available in the Chrome Web Store"></a><a href="#hides">What it hides</a></div>
+<p class="fine">Free &middot; No account &middot; Works in every LinkedIn language &middot; Nothing leaves your browser</p>
 </div>
-<div class="shot">
-<img src="/assets/presets-960.webp" srcset="/assets/presets-480.webp 480w, /assets/presets-960.webp 960w" sizes="(max-width: 900px) 90vw, 440px" width="960" height="1040" alt="Unlinked toolbar popup showing 24 posts hidden from the LinkedIn feed and four filters: Ads &amp; suggestions, Recommended, Aggressive and Custom" fetchpriority="high">
+<div class="hero-shot">
+<img src="/assets/popup-560.webp" srcset="/assets/popup-560.webp 560w, /assets/popup-1120.webp 1120w" sizes="(max-width: 900px) 92vw, 460px" width="560" height="587" alt="The Unlinked popup: 31 posts hidden and four filters, with Recommended selected" fetchpriority="high">
 </div>
 </div>
 </section>
 
-<section id="features">
+<section id="hides">
 <div class="wrap">
 <div class="sec-head">
-<h2>Everything noisy, gone</h2>
-<p>Unlinked is a LinkedIn feed filter that hides the filler and keeps the posts you came to read.</p>
+<h2>What Unlinked hides</h2>
+<p>LinkedIn mixes your feed with posts you never asked for. Unlinked takes them out as the page loads, so the feed appears already clean.</p>
 </div>
-<div class="grid3">
-<article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div><h3>Ads &amp; promoted posts</h3><p>Hide promoted posts and sponsored content so your feed is made of real posts.</p></article>
-<article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Suggestions &amp; carousels</h3><p>Hide LinkedIn&rsquo;s suggested posts, plus the people and jobs carousels in the middle of the feed.</p></article>
-<article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><h3>&ldquo;Liked by&rdquo; &amp; &ldquo;commented on&rdquo;</h3><p>Skip posts that only appear because someone in your network liked or commented on them.</p></article>
-<article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Only people you follow</h3><p>Hide posts from people and pages you don&rsquo;t follow, and keep the ones you chose.</p></article>
-<article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div><h3>Reposts, polls, videos and more</h3><p>Switch off reposts, celebrations, hiring posts, polls and videos, one by one.</p></article>
-<article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div><h3>Less clutter on the page</h3><p>Hide the news and puzzles sidebar, your profile sidebar, the messaging pop-up and like and comment counts.</p></article>
-</div>
-</div>
-</section>
-
-<section id="how" class="soft">
-<div class="wrap">
-<div class="sec-head">
-<h2>From cluttered to clean</h2>
-<p>Install it, open LinkedIn and your feed cleans itself up. There is nothing to set up.</p>
-</div>
-<div class="ba" role="img" aria-label="Illustration: a feed with promoted and suggested posts next to the same feed with only posts from people you follow">
-<div class="feed">
-<h3>Before</h3>
-<div class="post"><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
-<div class="post bad"><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
-<div class="post bad"><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
-<div class="post"><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
-</div>
-<div class="feed clean">
-<h3>After</h3>
-<div class="post"><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
-<div class="post"><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
-</div>
-</div>
-<ol class="steps">
-<li><b>Install Unlinked</b><span>Add the extension to Chrome. It is on by default and uses the Recommended filter.</span></li>
-<li><b>Open your LinkedIn feed</b><span>Promoted, suggested and &ldquo;liked by&rdquo; posts disappear as you scroll.</span></li>
-<li><b>Tune it if you like</b><span>Click the toolbar icon to pick a filter or switch individual items on and off.</span></li>
-</ol>
+<dl class="hides">
+<div><dt>Ads</dt><dd>Promoted posts from companies and pages.</dd></div>
+<div><dt>Posts your network reacted to</dt><dd>Posts that only show up because someone you know liked or commented on them.</dd></div>
+<div><dt>Suggestions</dt><dd>Posts and carousels from people and pages you don&rsquo;t follow, like &ldquo;Jobs recommended for you&rdquo;.</dd></div>
+<div><dt>Clutter around the feed</dt><dd>The news sidebar, the messaging pop-up and like counts, if you want those gone too.</dd></div>
+</dl>
 </div>
 </section>
 
 <section id="filters">
-<div class="wrap split">
-<div class="copy">
-<h2>Pick a LinkedIn feed filter in one click</h2>
-<p class="sub">Four filters cover most feeds. Change them any time from the toolbar popup.</p>
-<div class="presets">
-<div class="preset"><b>Ads &amp; suggestions</b><span>Hides promoted posts and LinkedIn&rsquo;s suggestions.</span></div>
-<div class="preset rec"><b>Recommended</b><span>Also hides posts from people you don&rsquo;t follow, and posts shown because someone in your network liked or commented on them.</span></div>
-<div class="preset"><b>Aggressive</b><span>Hides everything except posts from people you follow, plus the clutter around the feed.</span></div>
-<div class="preset"><b>Custom</b><span>Your own mix of switches, remembered for next time.</span></div>
+<div class="wrap">
+<div class="sec-head">
+<h2>Choose how strict it is</h2>
+<p>Pick a filter from the toolbar. Recommended is on from the start.</p>
 </div>
-</div>
-<div class="media">
-<img src="/assets/presets-960.webp" srcset="/assets/presets-480.webp 480w, /assets/presets-960.webp 960w" sizes="(max-width: 900px) 90vw, 440px" width="960" height="1040" alt="Unlinked toolbar popup showing 24 posts hidden from the LinkedIn feed and four filters: Ads &amp; suggestions, Recommended, Aggressive and Custom" loading="lazy">
-</div>
+<dl class="hides">
+<div><dt>Ads &amp; suggestions</dt><dd>Hides promoted and suggested posts only.</dd></div>
+<div><dt>Recommended</dt><dd>Also hides posts from people you don&rsquo;t follow and posts your network reacted to.</dd></div>
+<div><dt>Aggressive</dt><dd>Hides everything but the people you follow, plus the clutter around the feed.</dd></div>
+<div><dt>Custom</dt><dd>Your own mix of switches, remembered for next time.</dd></div>
+</dl>
 </div>
 </section>
 
-<section id="advanced" class="soft">
+<section id="advanced">
 <div class="wrap split rev">
 <div class="media">
-<img src="/assets/advanced-960.webp" srcset="/assets/advanced-480.webp 480w, /assets/advanced-960.webp 960w" sizes="(max-width: 900px) 90vw, 440px" width="960" height="1190" alt="Unlinked advanced settings with switches to hide posts from people you don&#x27;t follow, network likes and comments, LinkedIn suggestions, ads, reposts, celebrations, hiring posts, polls and videos" loading="lazy">
+<img src="/assets/popup-advanced-560.webp" srcset="/assets/popup-advanced-560.webp 560w, /assets/popup-advanced-1120.webp 1120w" sizes="(max-width: 900px) 92vw, 440px" width="560" height="1040" alt="Unlinked&#x27;s advanced settings, with a switch for each kind of post and page element" loading="lazy">
 </div>
 <div class="copy">
-<h2>Fine-tune exactly what disappears</h2>
-<p class="sub">Open Advanced to turn individual filters on or off and tidy up the rest of the page.</p>
-<ul class="ticks">
-<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg><span>Hide reposts, celebrations, hiring posts, polls and videos</span></li>
-<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg><span>Hide the news and puzzles sidebar, your profile sidebar, the messaging pop-up, and like and comment counts</span></li>
-<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg><span>Mute keywords and people, with name suggestions as you type</span></li>
-<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg><span>Use focus mode to hide the whole feed when you only want to post or check messages</span></li>
-<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg><span>Optionally show a thin &ldquo;N posts hidden&rdquo; line that brings removed posts back</span></li>
+<h2>Or decide for each kind of post</h2>
+<p class="sub">Open Advanced for a switch per kind of post.</p>
+<ul class="plain">
+<li>Reposts, celebrations, hiring posts, polls, videos and games</li>
+<li>The news sidebar, your profile sidebar, the messaging pop-up and like counts</li>
+<li>Muted keywords and people, with name suggestions as you type</li>
+<li>Sort the feed by Recent, so posts come in the order they were written</li>
+<li>Focus mode, which hides the whole feed when you only want to post</li>
 </ul>
 </div>
 </div>
@@ -148,23 +110,21 @@
 <section id="privacy">
 <div class="wrap">
 <div class="sec-head">
-<h2>Private by design</h2>
-<p>Unlinked collects nothing. It only changes what you see in your own browser.</p>
+<h2>Nothing leaves your browser</h2>
+<p>Unlinked runs only on linkedin.com and does all of its work on your computer. There are no accounts, no analytics and no servers. Your settings sync through your own Chrome profile.</p>
 </div>
-<div class="grid3">
-<article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h3>Runs only on linkedin.com</h3><p>The extension is limited to www.linkedin.com and asks for a single permission: storage.</p></article>
-<article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22.61 16.95A5 5 0 0 0 18 10h-1.26a8 8 0 0 0-7.05-6M5 5a8 8 0 0 0 4 15h9a5 5 0 0 0 1.7-.3"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div><h3>Nothing leaves your browser</h3><p>No accounts, no analytics, no servers. Unlinked sends no data anywhere.</p></article>
-<article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Your settings stay yours</h3><p>Settings are saved with Chrome sync. Recently seen author names, used for muted-people suggestions, stay on your device.</p></article>
-</div>
-<p class="center"><a href="/privacy/">Read the privacy policy</a></p>
+<ul class="facts-line">
+<li>No data collected</li>
+<li>One permission: storage</li>
+<li><a href="/privacy/">Privacy policy</a></li>
+</ul>
 </div>
 </section>
 
-<section id="faq" class="soft">
+<section id="faq">
 <div class="wrap">
 <div class="sec-head">
-<h2>Frequently asked questions</h2>
-<p>Short answers about cleaning up your LinkedIn feed with Unlinked.</p>
+<h2>Questions</h2>
 </div>
 <div class="faq">
 <details><summary>What is Unlinked?</summary><p>Unlinked is a free Chrome extension that cleans up your LinkedIn home feed. It hides promoted posts, suggested posts, “liked by” and “commented on” activity and other filler, so the feed shows posts from the people and pages you follow.</p></details>
@@ -181,9 +141,9 @@
 
 <section class="final">
 <div class="wrap">
-<h2>Ready for a clean LinkedIn feed?</h2>
-<p>See only the people you follow. No ads, no suggestions, no filler.</p>
-<div class="cta center-cta"><a class="btn btn-primary" href="https://chromewebstore.google.com/detail/unlinked-clean-linkedin-f/mgeelmoeppnfccegklclehplkkicmcca" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Add to Chrome, it&rsquo;s free</a><a class="btn btn-ghost" href="/clean-linkedin-feed/">Read the guide</a></div>
+<h2>Try it on your own feed</h2>
+<p>It&rsquo;s free, and you can switch it off from the toolbar any time.</p>
+<div class="cta"><a class="store-badge" href="https://chromewebstore.google.com/detail/unlinked-clean-linkedin-f/mgeelmoeppnfccegklclehplkkicmcca" rel="noopener"><img src="/assets/chrome-web-store.png" width="206" height="62" alt="Available in the Chrome Web Store"></a><a href="/clean-linkedin-feed/">Read the guide</a></div>
 </div>
 </section>
 
