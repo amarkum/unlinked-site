@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 """Generate the unlinked.store static pages. Run: python3 tools/build.py
 
-GitHub Pages serves the generated HTML as is. When the extension is published on the
-Chrome Web Store, set STORE_URL below and run this script again to turn the
-"Coming soon" buttons into install links.
+GitHub Pages serves the generated HTML as is. STORE_URL is the Chrome Web Store
+listing; set it to None to turn the install buttons back into "Coming soon" badges.
 """
 import html, json, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://unlinked.store"
-STORE_URL = None  # set to the Chrome Web Store listing URL once it is published
-LASTMOD = "2026-10-30"
+STORE_URL = "https://chromewebstore.google.com/detail/unlinked-clean-linkedin-f/mgeelmoeppnfccegklclehplkkicmcca"
+LASTMOD = "2026-10-31"
 EMAIL = "amarkumar.sde@gmail.com"
 COFFEE = "https://buymeacoffee.com/amarxkumar"
 SPONSORS = "https://github.com/sponsors/amarkum"
@@ -30,6 +29,9 @@ ICONS = {
     "clock": '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
     "sliders": '<line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>',
     "cloud-off": '<path d="M22.61 16.95A5 5 0 0 0 18 10h-1.26a8 8 0 0 0-7.05-6M5 5a8 8 0 0 0 4 15h9a5 5 0 0 0 1.7-.3"/><line x1="1" y1="1" x2="23" y2="23"/>',
+    "menu": '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>',
+    "x": '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',
+    "plus": '<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>',
     "globe": '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
 }
 
@@ -100,6 +102,14 @@ NAV = [
 ]
 
 
+# Mobile menu toggle. Without JS the header falls back to a scrolling row of links.
+MENU_JS = ("(function(){var h=document.querySelector('.site-header'),b=h.querySelector('.menu-btn');h.classList.add('js');"
+           "function set(o){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o)}"
+           "b.addEventListener('click',function(){set(!h.classList.contains('open'))});"
+           "h.querySelector('.nav').addEventListener('click',function(e){if(e.target.closest('a'))set(false)});"
+           "document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open')){set(false);b.focus()}})})();")
+
+
 def header(current=None):
     links = "".join(
         f'<a href="{href}"'
@@ -113,9 +123,11 @@ def header(current=None):
 <header class="site-header">
 <div class="wrap">
 <a class="brand" href="/"><img src="/assets/icon-48.png" width="32" height="32" alt="">Unlinked</a>
-<nav class="nav" aria-label="Main">{links}</nav>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">{icon("menu", 24).replace("<svg ", '<svg class="i-open" ', 1)}{icon("x", 24).replace("<svg ", '<svg class="i-close" ', 1)}</button>
+<nav class="nav" id="site-nav" aria-label="Main">{links}</nav>
 </div>
-</header>'''
+</header>
+<script>{MENU_JS}</script>'''
 
 
 def footer():
@@ -154,9 +166,13 @@ def footer():
 '''
 
 
+def store_ld():
+    return {"installUrl": STORE_URL, "downloadUrl": STORE_URL, "sameAs": [STORE_URL]} if STORE_URL else {}
+
+
 def soon_or_install(kind="hero"):
     if STORE_URL:
-        return f'<a class="btn btn-primary" href="{STORE_URL}">Add to Chrome, it&rsquo;s free</a>'
+        return f'<a class="btn btn-primary" href="{STORE_URL}" rel="noopener">{icon("plus", 18, 2.5)} Add to Chrome, it&rsquo;s free</a>'
     return f'<span class="btn btn-soon">{icon("clock", 18)} Coming soon to the Chrome Web Store</span>'
 
 
@@ -238,7 +254,7 @@ def home():
              "applicationCategory": "BrowserApplication", "operatingSystem": "Chrome",
              "description": "Clean up your LinkedIn feed: see posts from people you follow, without promoted, suggested and other noise.",
              "image": OG, "isAccessibleForFree": True,
-             "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}},
+             "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, **store_ld()},
             {"@type": "FAQPage", "@id": SITE + "/#faq",
              "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]},
         ],
@@ -400,7 +416,7 @@ def guide():
         "@context": "https://schema.org",
         "@graph": [
             {"@type": "Article", "@id": SITE + path + "#article", "headline": "How to clean up your LinkedIn feed",
-             "description": desc, "image": OG, "datePublished": LASTMOD, "dateModified": LASTMOD, "inLanguage": "en",
+             "description": desc, "image": OG, "datePublished": "2026-10-30", "dateModified": LASTMOD, "inLanguage": "en",
              "mainEntityOfPage": SITE + path,
              "author": {"@type": "Organization", "name": "Unlinked", "url": SITE + "/"},
              "publisher": {"@type": "Organization", "name": "Unlinked", "url": SITE + "/",
@@ -440,7 +456,7 @@ def guide():
 <h2>Clean your LinkedIn feed automatically with Unlinked</h2>
 <p><a href="/">Unlinked</a> is a free Chrome extension that does the filtering for you, inside your own browser.</p>
 <ol>
-<li><b>Install Unlinked.</b> {"It is on the Chrome Web Store." if STORE_URL else "It is coming soon to the Chrome Web Store."} It is on by default and starts with the Recommended filter.</li>
+<li><b>Install Unlinked.</b> {f'Add it from the <a href="{STORE_URL}" rel="noopener">Chrome Web Store</a>.' if STORE_URL else "It is coming soon to the Chrome Web Store."} It is on by default and starts with the Recommended filter.</li>
 <li><b>Open linkedin.com.</b> Promoted, suggested and &ldquo;liked by&rdquo; posts are hidden as you scroll.</li>
 <li><b>Pick a filter.</b> Click the Unlinked icon in the toolbar and choose Ads &amp; suggestions, Recommended, Aggressive or Custom.</li>
 <li><b>Fine-tune it.</b> Under Advanced, hide reposts, celebrations, hiring posts, polls and videos, the sidebars, the messaging pop-up and reaction counts, and add muted keywords or people.</li>
@@ -580,7 +596,7 @@ def store():
              "applicationCategory": "BrowserApplication", "operatingSystem": "Chrome", "softwareVersion": "1.0.0",
              "description": "Clean up your LinkedIn feed: see posts from people you follow, without promoted, suggested and other noise.",
              "image": OG, "screenshot": [SITE + s + "-1280.webp" for s, _ in shots], "isAccessibleForFree": True,
-             "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}},
+             "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, **store_ld()},
             breadcrumb_ld([("Get Unlinked for Chrome", path)]),
         ],
     }
