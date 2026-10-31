@@ -592,7 +592,7 @@ def store():
         "@context": "https://schema.org",
         "@graph": [
             {"@type": "SoftwareApplication", "@id": SITE + "/#app", "name": "Unlinked - Clean LinkedIn Feed", "url": SITE + path,
-             "applicationCategory": "BrowserApplication", "operatingSystem": "Chrome", "softwareVersion": "1.0.0",
+             "applicationCategory": "BrowserApplication", "operatingSystem": "Chrome", "softwareVersion": "2.0.0",
              "description": "Clean up your LinkedIn feed: see posts from people you follow, without promoted, suggested and other noise.",
              "image": OG, "screenshot": [SITE + s + "-1280.webp" for s, _ in shots], "isAccessibleForFree": True,
              "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, **store_ld()},
@@ -635,7 +635,7 @@ def store():
 <dl class="facts">
 <div><dt>Price</dt><dd>Free</dd></div>
 <div><dt>Category</dt><dd>Social Networking</dd></div>
-<div><dt>Version</dt><dd>1.0.0</dd></div>
+<div><dt>Version</dt><dd>2.0.0</dd></div>
 <div><dt>Language</dt><dd>English</dd></div>
 <div><dt>Works in</dt><dd>Chrome on desktop</dd></div>
 <div><dt>Runs on</dt><dd>www.linkedin.com</dd></div>
