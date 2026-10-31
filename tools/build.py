@@ -207,7 +207,7 @@ FAQ = [
     ("Can I hide LinkedIn ads and promoted posts?",
      "Yes. The Ads & suggestions filter hides promoted posts and LinkedIn’s suggestions, and you can switch ads and suggestions off separately under Advanced."),
     ("Can I still see the posts Unlinked hides?",
-     "Yes. Removed posts leave a thin “N posts hidden” line that you can click to bring them back, and you can turn Unlinked off at any time with the switch at the top of the popup."),
+     "Yes. Turn Unlinked off at any time with the switch at the top of the popup. Or, under Advanced, turn on “Show a line where posts were hidden” to get a thin “N posts hidden” line you can click to bring them back."),
     ("Does Unlinked collect my data?",
      "No. Unlinked runs only on linkedin.com, works entirely in your browser and sends no data anywhere. Your settings are saved with Chrome sync, and recently seen author names used for muted-people suggestions stay on your device."),
     ("Which browsers does it work in?",
@@ -317,7 +317,6 @@ def home():
 <div class="feed clean">
 <h3>After</h3>
 <div class="post"><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
-<div class="hidden-line">2 posts hidden</div>
 <div class="post"><div class="who"><span class="av"></span><i class="m"></i></div><i></i><i class="s"></i></div>
 </div>
 </div>
@@ -360,7 +359,7 @@ def home():
 {tick("Hide the news and puzzles sidebar, your profile sidebar, the messaging pop-up, and like and comment counts")}
 {tick("Mute keywords and people, with name suggestions as you type")}
 {tick("Use focus mode to hide the whole feed when you only want to post or check messages")}
-{tick("Click the thin &ldquo;N posts hidden&rdquo; line to bring removed posts back")}
+{tick("Optionally show a thin &ldquo;N posts hidden&rdquo; line that brings removed posts back")}
 </ul>
 </div>
 </div>
@@ -471,7 +470,7 @@ def guide():
 <li>Start with <b>Recommended</b>. Move to <b>Aggressive</b> if you want only the people you follow and nothing around them.</li>
 <li>Add <b>muted keywords</b> for phrases you keep seeing, and <b>muted people</b> for accounts you would rather not read.</li>
 <li>Use <b>focus mode</b> when you only want to post or check messages.</li>
-<li>Click the <b>&ldquo;N posts hidden&rdquo;</b> line whenever you are curious what was removed.</li>
+<li>Turn on <b>Show a line where posts were hidden</b> if you are curious what was removed.</li>
 </ul>
 
 <div class="callout">
@@ -557,7 +556,7 @@ def support():
 <h3>Unlinked hides too much</h3>
 <p>Switch to the lighter <b>Ads &amp; suggestions</b> filter, or choose <b>Custom</b> and turn off the items you want to keep.</p>
 <h3>How do I see a hidden post?</h3>
-<p>Click the thin &ldquo;N posts hidden&rdquo; line where the posts were, or turn Unlinked off from the popup.</p>
+<p>Turn Unlinked off from the popup. Or, under Advanced, turn on <b>Show a line where posts were hidden</b> and click the &ldquo;N posts hidden&rdquo; line where the posts were.</p>
 <h3>How do I start over?</h3>
 <p>Open the popup and press <b>Reset</b> to go back to the default settings.</p>
 <h3>LinkedIn changed and something slipped through</h3>
@@ -629,7 +628,7 @@ def store():
 {tick("Hides promoted posts, suggested posts, &ldquo;liked by&rdquo; and &ldquo;commented on&rdquo; activity, and posts from people you don&rsquo;t follow")}
 {tick("Switches for reposts, celebrations, hiring posts, polls, videos, sidebars, the messaging pop-up and like and comment counts")}
 {tick("Muted keywords and muted people, with name suggestions as you type")}
-{tick("Focus mode, and a thin &ldquo;N posts hidden&rdquo; line that brings removed posts back")}
+{tick("Focus mode, and an optional &ldquo;N posts hidden&rdquo; line that brings removed posts back")}
 </ul>
 
 <h2>Details</h2>
